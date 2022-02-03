@@ -1,0 +1,25 @@
+{
+    "name": "mateuszmesek-magento2/module-document-eav",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "magento/module-eav": "*",
+        "mateuszmesek-magento2/module-document": "^1.0",
+        "mateuszmesek-magento2/module-document-eav-api": "^1.0"
+    },
+    "replace": {
+        "mateuszmesek-magento2/module-document-eav": "*"
+    },
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MateuszMesek\\DocumentEav\\": "src"
+        }
+    }
+}
