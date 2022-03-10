@@ -8,9 +8,6 @@
         "mateuszmesek-magento2/module-document-data": "^1.0",
         "mateuszmesek-magento2/module-document-data-eav-api": "^1.0"
     },
-    "replace": {
-        "mateuszmesek-magento2/module-document-data-eav": "*"
-    },
     "license": [
         "MIT"
     ],
