@@ -1,15 +1,15 @@
 {
-    "name": "mateuszmesek-magento2/module-document-eav",
+    "name": "mateuszmesek-magento2/module-document-data-eav",
     "description": "N/A",
     "type": "magento2-module",
     "require": {
         "magento/framework": "*",
         "magento/module-eav": "*",
-        "mateuszmesek-magento2/module-document": "^1.0",
-        "mateuszmesek-magento2/module-document-eav-api": "^1.0"
+        "mateuszmesek-magento2/module-document-data": "^1.0",
+        "mateuszmesek-magento2/module-document-data-eav-api": "^1.0"
     },
     "replace": {
-        "mateuszmesek-magento2/module-document-eav": "*"
+        "mateuszmesek-magento2/module-document-data-eav": "*"
     },
     "license": [
         "MIT"
@@ -19,7 +19,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "MateuszMesek\\DocumentEav\\": "src"
+            "MateuszMesek\\DocumentDataEav\\": "src"
         }
     }
 }

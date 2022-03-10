@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentEav;
+namespace MateuszMesek\DocumentDataEav;
 
 use Generator;
 use Magento\Eav\Api\Data\AttributeInterface;
 use Magento\Eav\Model\Config as EavConfig;
-use MateuszMesek\Document\Api\DocumentNodesResolverInterface;
-use MateuszMesek\Document\Api\InputInterface;
-use MateuszMesek\DocumentEavApi\AttributeReturnTypeResolverInterface;
-use MateuszMesek\DocumentEavApi\AttributeValidatorInterface;
-use MateuszMesek\DocumentEavApi\AttributeValueResolverInterface;
+use MateuszMesek\DocumentDataApi\DocumentNodesResolverInterface;
+use MateuszMesek\DocumentDataApi\InputInterface;
+use MateuszMesek\DocumentDataEavApi\AttributeReturnTypeResolverInterface;
+use MateuszMesek\DocumentDataEavApi\AttributeValidatorInterface;
+use MateuszMesek\DocumentDataEavApi\AttributeValueResolverInterface;
 
 class DocumentNodesResolver implements DocumentNodesResolverInterface
 {
@@ -46,7 +46,7 @@ class DocumentNodesResolver implements DocumentNodesResolverInterface
 
             yield [
                 'path' => $attribute->getAttributeCode(),
-                'resolver' => function (InputInterface $input) use ($attribute) {
+                'valueResolver' => function (InputInterface $input) use ($attribute) {
                     $value = $this->attributeValueResolver->resolver($attribute, $input);
 
                     if (null === $value) {

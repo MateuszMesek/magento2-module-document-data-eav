@@ -4,6 +4,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'MateuszMesek_DocumentEav',
+    'MateuszMesek_DocumentDataEav',
     __DIR__
 );
