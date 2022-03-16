@@ -27,10 +27,6 @@ class AttributeReturnTypeResolver implements AttributeReturnTypeResolverInterfac
                     $value = (string)$value;
                 }
                 break;
-
-            default:
-                var_dump($attribute->getBackendType());
-                exit;
         }
 
 
@@ -65,10 +61,6 @@ class AttributeReturnTypeResolver implements AttributeReturnTypeResolverInterfac
                     );
                 }
                 break;
-
-            default:
-                var_dump($attribute->getFrontendInput());
-                exit;
         }
 
         return $value;
