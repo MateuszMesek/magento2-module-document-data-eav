@@ -44,7 +44,10 @@ class AttributeReturnTypeResolver implements AttributeReturnTypeResolverInterfac
                 break;
 
             case 'multiselect':
-                $value = explode(',', $value);
+                if (is_string($value)) {
+                    $value = explode(',', $value);
+                }
+
                 $intValues = array_filter(
                     $value,
                     static function ($value) {
