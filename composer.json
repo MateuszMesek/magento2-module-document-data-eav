@@ -4,6 +4,7 @@
     "type": "magento2-module",
     "require": {
         "magento/framework": "*",
+        "magento/framework-message-queue": "*",
         "magento/module-eav": "*",
         "mateuszmesek-magento2/module-document-data": "*",
         "mateuszmesek-magento2/module-document-data-eav-api": "*"

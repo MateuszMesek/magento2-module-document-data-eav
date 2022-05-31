@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="model_delete_commit_after">
+        <observer name="MateuszMesek_DocumentDataEav" instance="MateuszMesek\DocumentDataEav\Observer\MessageQueuePoisonPill\OnCommitAfter"/>
+    </event>
+    <event name="model_save_commit_after">
+        <observer name="MateuszMesek_DocumentDataEav" instance="MateuszMesek\DocumentDataEav\Observer\MessageQueuePoisonPill\OnCommitAfter"/>
+    </event>
+</config>
