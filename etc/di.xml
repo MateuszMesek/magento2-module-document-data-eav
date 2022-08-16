@@ -1,5 +1,16 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="MateuszMesek\DocumentDataEavApi\AttributeReturnTypeResolverInterface" type="MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver"/>
-    <preference for="MateuszMesek\DocumentDataEavApi\AttributeValidatorInterface" type="MateuszMesek\DocumentDataEav\AttributeValidator"/>
+    <preference for="MateuszMesek\DocumentDataEavApi\AttributeReturnTypeResolverInterface" type="MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver\ByAttributeCode"/>
+    <preference for="MateuszMesek\DocumentDataEavApi\AttributeValidatorInterface" type="MateuszMesek\DocumentDataEav\AttributeValidator\ByAttributeCode"/>
+
+    <type name="MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver\ByAttributeCode">
+        <arguments>
+            <argument name="defaultResolver" xsi:type="object">MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver\DefaultResolver</argument>
+        </arguments>
+    </type>
+    <type name="MateuszMesek\DocumentDataEav\AttributeValidator\ByAttributeCode">
+        <arguments>
+            <argument name="defaultValidator" xsi:type="object">MateuszMesek\DocumentDataEav\AttributeValidator\DefaultValidator</argument>
+        </arguments>
+    </type>
 </config>

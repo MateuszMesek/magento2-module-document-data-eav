@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentDataEav;
+namespace MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver;
 
 use Magento\Eav\Api\Data\AttributeInterface;
 use MateuszMesek\DocumentDataEavApi\AttributeReturnTypeResolverInterface;
 
-class AttributeReturnTypeResolver implements AttributeReturnTypeResolverInterface
+class DefaultResolver implements AttributeReturnTypeResolverInterface
 {
     public function resolver(AttributeInterface $attribute, $value)
     {
@@ -28,7 +28,6 @@ class AttributeReturnTypeResolver implements AttributeReturnTypeResolverInterfac
                 }
                 break;
         }
-
 
         switch ($attribute->getFrontendInput()) {
             case 'image':
