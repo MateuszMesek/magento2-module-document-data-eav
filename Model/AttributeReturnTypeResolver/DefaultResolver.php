@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver;
+namespace MateuszMesek\DocumentDataEav\Model\AttributeReturnTypeResolver;
 
 use Magento\Eav\Api\Data\AttributeInterface;
-use MateuszMesek\DocumentDataEavApi\AttributeReturnTypeResolverInterface;
+use MateuszMesek\DocumentDataEavApi\Model\AttributeReturnTypeResolverInterface;
 
 class DefaultResolver implements AttributeReturnTypeResolverInterface
 {

@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver;
+namespace MateuszMesek\DocumentDataEav\Model\AttributeReturnTypeResolver;
 
 use Magento\Eav\Api\Data\AttributeInterface;
 use Magento\Framework\ObjectManager\TMap;
 use Magento\Framework\ObjectManager\TMapFactory;
-use MateuszMesek\DocumentDataEavApi\AttributeReturnTypeResolverInterface;
+use MateuszMesek\DocumentDataEavApi\Model\AttributeReturnTypeResolverInterface;
 
 class ByAttributeCode implements AttributeReturnTypeResolverInterface
 {

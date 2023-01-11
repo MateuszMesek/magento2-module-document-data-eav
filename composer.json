@@ -3,11 +3,13 @@
     "description": "N/A",
     "type": "magento2-module",
     "require": {
+        "php": ">=8.1",
         "magento/framework": "*",
         "magento/framework-message-queue": "*",
         "magento/module-eav": "*",
-        "mateuszmesek-magento2/module-document-data": "*",
-        "mateuszmesek-magento2/module-document-data-eav-api": "*"
+        "mateuszmesek-magento2/module-document-data": "^1.0",
+        "mateuszmesek-magento2/module-document-data-api": "^1.0",
+        "mateuszmesek-magento2/module-document-data-eav-api": "^1.0"
     },
     "license": [
         "MIT"
@@ -17,7 +19,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "MateuszMesek\\DocumentDataEav\\": "src"
+            "MateuszMesek\\DocumentDataEav\\": ""
         }
     }
 }

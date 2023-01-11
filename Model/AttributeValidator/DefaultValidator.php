@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentDataEav\AttributeValidator;
+namespace MateuszMesek\DocumentDataEav\Model\AttributeValidator;
 
 use Magento\Eav\Api\Data\AttributeInterface;
-use MateuszMesek\DocumentDataEavApi\AttributeValidatorInterface;
+use MateuszMesek\DocumentDataEavApi\Model\AttributeValidatorInterface;
 
 class DefaultValidator implements AttributeValidatorInterface
 {

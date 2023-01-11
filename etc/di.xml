@@ -1,16 +1,16 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="MateuszMesek\DocumentDataEavApi\AttributeReturnTypeResolverInterface" type="MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver\ByAttributeCode"/>
-    <preference for="MateuszMesek\DocumentDataEavApi\AttributeValidatorInterface" type="MateuszMesek\DocumentDataEav\AttributeValidator\ByAttributeCode"/>
+    <preference for="MateuszMesek\DocumentDataEavApi\Model\AttributeReturnTypeResolverInterface" type="MateuszMesek\DocumentDataEav\Model\AttributeReturnTypeResolver\ByAttributeCode"/>
+    <preference for="MateuszMesek\DocumentDataEavApi\Model\AttributeValidatorInterface" type="MateuszMesek\DocumentDataEav\Model\AttributeValidator\ByAttributeCode"/>
 
-    <type name="MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver\ByAttributeCode">
+    <type name="MateuszMesek\DocumentDataEav\Model\AttributeReturnTypeResolver\ByAttributeCode">
         <arguments>
-            <argument name="defaultResolver" xsi:type="object">MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver\DefaultResolver</argument>
+            <argument name="defaultResolver" xsi:type="object">MateuszMesek\DocumentDataEav\Model\AttributeReturnTypeResolver\DefaultResolver</argument>
         </arguments>
     </type>
-    <type name="MateuszMesek\DocumentDataEav\AttributeValidator\ByAttributeCode">
+    <type name="MateuszMesek\DocumentDataEav\Model\AttributeValidator\ByAttributeCode">
         <arguments>
-            <argument name="defaultValidator" xsi:type="object">MateuszMesek\DocumentDataEav\AttributeValidator\DefaultValidator</argument>
+            <argument name="defaultValidator" xsi:type="object">MateuszMesek\DocumentDataEav\Model\AttributeValidator\DefaultValidator</argument>
         </arguments>
     </type>
 </config>

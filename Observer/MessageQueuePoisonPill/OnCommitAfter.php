@@ -9,13 +9,10 @@ use Magento\Framework\MessageQueue\PoisonPill\PoisonPillPutInterface;
 
 class OnCommitAfter implements ObserverInterface
 {
-    private PoisonPillPutInterface $poisonPillPut;
-
     public function __construct(
-        PoisonPillPutInterface $poisonPillPut
+        private readonly PoisonPillPutInterface $poisonPillPut
     )
     {
-        $this->poisonPillPut = $poisonPillPut;
     }
 
     public function execute(EventObserver $observer)
