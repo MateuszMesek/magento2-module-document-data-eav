@@ -5,6 +5,7 @@ namespace MateuszMesek\DocumentDataEav\Model;
 use Generator;
 use Magento\Eav\Api\Data\AttributeInterface;
 use Magento\Eav\Model\Config as EavConfig;
+use MateuszMesek\DocumentData\Model\Command\GetDocumentNodeValue\ResolverFactory;
 use MateuszMesek\DocumentData\Model\Data\DocumentNodeFactory;
 use MateuszMesek\DocumentDataApi\Model\DocumentNodesResolverInterface;
 use MateuszMesek\DocumentDataApi\Model\InputInterface;
@@ -20,6 +21,7 @@ class DocumentNodesResolver implements DocumentNodesResolverInterface
         private readonly EavConfig                            $eavConfig,
         private readonly string                               $entityType,
         private readonly AttributeValidatorInterface          $attributeValidator,
+        private readonly ResolverFactory                      $resolverFactory,
         private readonly AttributeValueResolverInterface      $attributeValueResolver,
         private readonly AttributeReturnTypeResolverInterface $attributeReturnTypeResolver
     )
@@ -36,18 +38,20 @@ class DocumentNodesResolver implements DocumentNodesResolverInterface
                 continue;
             }
 
+            $callback = function (InputInterface $input) use ($attribute) {
+                $value = $this->attributeValueResolver->resolver($attribute, $input);
+
+                if (null === $value) {
+                    return null;
+                }
+
+                return $this->attributeReturnTypeResolver->resolver($attribute, $value);
+            };
+
             yield $this->documentNodeFactory->create([
                 'documentName' => $this->documentName,
                 'path' => $attribute->getAttributeCode(),
-                'valueResolver' => function (InputInterface $input) use ($attribute) {
-                    $value = $this->attributeValueResolver->resolver($attribute, $input);
-
-                    if (null === $value) {
-                        return null;
-                    }
-
-                    return $this->attributeReturnTypeResolver->resolver($attribute, $value);
-                }
+                'valueResolver' => $this->resolverFactory->create($callback)
             ]);
         }
     }
